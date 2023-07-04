@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CBZmerger", "CBZmerger\CBZmerger.pyproj", "{1E7370A2-803D-41FA-9B18-8D05E5E6C69D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E7370A2-803D-41FA-9B18-8D05E5E6C69D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7370A2-803D-41FA-9B18-8D05E5E6C69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0B4829C-90F0-4447-AA87-A42BD22F2B81}
+	EndGlobalSection
+EndGlobal
