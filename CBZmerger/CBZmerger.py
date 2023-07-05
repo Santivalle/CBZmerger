@@ -4,6 +4,7 @@
 import os
 from zipfile import ZipFile
 import re
+import shutil
 
 #Requesting to user necessary stuffs
 print('To start please type the directory of the CBZ files to merge (IMPORTANT: Put / at the end)')
@@ -109,6 +110,9 @@ with ZipFile(str(directory)+str(merged_name)+'.zip', 'w') as f:
             if file.endswith('.jpg'):
                 f.write(os.path.join(folder, file), file)
 
+
+# Removing Temp directory
+shutil.rmtree(dir_temp)
 
 # Convert ZIP file to CBZ (Merge completed)
 cbz_file = str(directory)+str(merged_name)+'.cbz'
