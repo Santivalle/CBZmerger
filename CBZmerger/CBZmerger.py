@@ -99,7 +99,19 @@ for i in range(int(numfiles)):
                 old_name = dir_temp+str(i+1)+'/'+'0'+str(w+1)+'.jpg'
             else:
                 old_name = dir_temp+str(i+1)+'/'+str(w+1)+'.jpg'
+            
             new_name = dir_temp+str(i+1)+'/'+str(j)+'.jpg'
+            namedupli = str(j)+'.jpg'
+
+            actual = os.listdir(dir_temp+str(i+1))
+            if actual[w].find('temp')!= -1:
+                old_name = dir_temp+str(i+1)+'/'+'temp'+str(w+1)+'.jpg'
+        
+            
+            if namedupli in actual:
+                temp_name = dir_temp+str(i+1)+'/'+'temp'+str(j)+'.jpg'
+                os.rename(new_name, temp_name)
+
             os.rename(old_name, new_name)
             j = j+1
  
