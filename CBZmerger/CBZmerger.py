@@ -22,7 +22,7 @@ print('\nType 1 if the CBZ files are named "Episode XX" or write another number 
 print('IMPORTANT: The CBZ files must be named "Episode XX" or "Chapter XX" (XX is replaced by the corresponding number)')
 opt = input()
 
-if opt==1:
+if int(opt)==1:
     print('\nType the name of the first CBZ file (Example: Episode 32)')
     print('IMPORTANT: If we follow the example the others files must be named Episode 33, Episode 34, etc.')
 else:
@@ -36,7 +36,7 @@ print('\nMerging',numfiles, 'CBZ files with the following order:')
 
 #Define function to increment chapter/episode from the data given by the user
 def increment_chapter(text,option):
-    if option==1:
+    if int(option)==1:
         pattern = r'Episode (\d+)'
     else:
         pattern = r'Chapter (\d+)'
@@ -48,7 +48,7 @@ def increment_chapter(text,option):
         chapter_number = int(match.group(1))
 
         incremented_chapter = chapter_number + 1
-        if option==1:
+        if int(option)==1:
             modified_text = re.sub(pattern, f'Episode {incremented_chapter}', text)
         else:
             modified_text = re.sub(pattern, f'Chapter {incremented_chapter}', text)
@@ -100,8 +100,12 @@ for i in range(int(numfiles)):
             else:
                 old_name = dir_temp+str(i+1)+'/'+str(w+1)+'.jpg'
             
-            new_name = dir_temp+str(i+1)+'/'+str(j)+'.jpg'
-            namedupli = str(j)+'.jpg'
+            if j<10:
+                new_name = dir_temp+str(i+1)+'/'+'0'+str(j)+'.jpg'
+                namedupli = '0'+str(j)+'.jpg'
+            else:
+                new_name = dir_temp+str(i+1)+'/'+str(j)+'.jpg'
+                namedupli = str(j)+'.jpg'
 
             actual = os.listdir(dir_temp+str(i+1))
             if actual[w].find('temp')!= -1:
